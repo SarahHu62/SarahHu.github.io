@@ -248,3 +248,9 @@ input[type=submit]:hover {
 	  vertical-align:top;
    }
 }
+
+@media screen and (prefers-reduced-motion: reduce){
+	.center_img{
+	  animation: none;
+	}
+}
