@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico">
+  <title>Contact Me Form</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="https://kit.fontawesome.com/3a01780cbb.js" crossorigin="anonymous"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1EBGQTMDT"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y1EBGQTMDT');
+  </script>
+</head>
+
+<body>
+    <a class="skip" href="#main">Skip to Main Content</a>
+	<!-- Header is a sematic tag page that aids readability -->
+	<header>
+		<!-- Nav is a sematic tag page that aids accessibility -->
+		<nav>
+			<ul>
+				<!-- Since I am on the index file I added class = action to the link to index. -->
+				<li><a href = "index.html" >Home Page</a></li>
+				<li><a href = "alltype.html">All Types</a></li>
+				<li><a href = "typedetail.html">Type Details</a></li>
+				<li><a href = "celebrity.html">Celebrity Types</a></li>
+				<li class="active"><a href = "form.html">Contact</a></li>
+			</ul>
+		</nav>
+		<!-- The h1 is a semantic tag that aids accessibility -->
+		<h1 id="main">Have any questions? Let's connect!</h1>
+	</header>
+
+    <main>
+    <form action="https://formspree.io/f/xoqrlzgr" method="POST">
+    <fieldset>
+        <legend>Contact Me</legend>
+
+        <label for="name_id"><i class="fa-solid fa-user"></i>Your Name</label>
+        <input type="text" placeholder="Enter Your Name" id = "name_id" name="name" required>
+
+        <label for="email_id"><i class="fa-solid fa-envelope"></i>Your Email</label>
+        <input type="email" placeholder="Enter Your Email" id = "email_id" name="email" required>
+
+        <label for="phone_id"><i class="fa-solid fa-phone-flip"></i>Your Phone Number</label>
+        <input type="tel" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+
+
+        <label for="msg"><i class="fa-solid fa-comment-dots"></i>Leave A Message</label>
+        <textarea placeholder="Enter your message" id = "msg" name="mesg" required></textarea><br>
+
+        <input type="submit" value = "Contact Me">
+    </fieldset>
+    </form>
+    </main>
+
+	<footer>
+		<p class="bottom">16 Personalities &copy; 2022</p>
+	</footer>
+
+</body>
+</html>

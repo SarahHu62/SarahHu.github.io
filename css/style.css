@@ -1,69 +1,250 @@
-body {
-    color:#000000;
-    font-family: Verdana, "Times New Roman";
-    margin: 25px 25px 0px;
+
+
+body{
+	font-family: 'Roboto Slab', serif;
+    font-size:120%;
+	box-sizing: border-box;
+	display:flex;
+	flex-flow:column nowrap;
+    margin: 24px 24px;
+	height:100vh;
+    background-image: url(../images/background.jpeg);
 }
 
+/*nav bar*/
+.skip{
+    display: none;
+}
+
+.navigation {
+    width: 100%;
+    display:flex;
+	align-items: center;
+}
+
+nav {
+    flex:1;
+    text-align: right;
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+nav ul li{
+    padding: 20px 24px;
+    list-style: none;
+	display: inline-block;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+nav li a{
+    color:#272728 !important;
+	text-decoration: none;
+}
+
+nav .active{
+    text-transform: uppercase;
+    background-color: rgb(216, 226, 239);
+    border-radius: 14px;
+}
+
+nav .active a{
+	text-decoration: none;
+	color:#032624 !important;
+}
+
+
 h1 {
+    font-family: 'Rubik', sans-serif;
     font-size: 40px;
     text-align: center;
     padding: 15px;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 1.4rem;
 }
 
-
-nav li{
-    padding: 12px;
-    margin: 20px;
-    border: 1px dashed gray;
-    position:relative;
-    display:inline-block;
-}
-
-.skip{
-    margin: 40px;
-}
-
-nav {
-    width: 100%;
-    position: static;
-    top: 50px;
-    text-align:center;
-}
-
-.center_img{
-    text-align: center;
-}
-
-.active {
-    background-color: lightblue;
-    font-weight: bold;
-    border: 2px solid navy;
+.fa-solid {
+    padding: 4px;
 }
 
 img{
     margin: 12px;
     padding: 15px;
-    border: 2px solid blueviolet;
     width: 400px;
-    border-radius: 15px;
-}
-
-.galleries{
-    width: 320px;
 }
 
 img:hover{
-    filter: grayscale();
-    border: 2px dashed;
+	transform: scale(1.02);
 }
 
+
+@keyframes animate {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0%;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+.center_img{
+    animation: animate 2s;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.row {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	padding: 0 4px 100px 0;
+}
+
+.column {
+	-ms-flex: 30%;
+	flex: 30%;
+	max-width: 30%;
+	padding: 0 4px;
+}
+
+.column img {
+	margin-top: 8px;
+	vertical-align: middle;
+	width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+	.column {
+	  -ms-flex: 50%;
+	  flex: 50%;
+	  max-width: 50%;
+	}
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+	.column {
+	  -ms-flex: 100%;
+	  flex: 100%;
+	  max-width: 100%;
+	}
+}
+
+footer{
+	padding: 32px 8px;
+	font-size: small;
+}
+
+@media only screen and (min-width: 900px) {
+	.nav_links{
+	  flex-direction: row;
+	}
+	p{
+	  font-size: 16px;
+	}
+}
+
+
 .bottom{
-    background-color: lightblue;
-    padding: 32px 8px;
-    margin-top: 30px;
+    background-color: rgb(216, 226, 239);
+    padding: 24px 8px;
+    margin-top: 60px;
     text-align: center;
+}
+
+/*contact form*/
+form {
+	border-radius: 6px;
+    background-color: rgb(216, 226, 239);
+
+  }
+
+legend {
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+label{
+	display: inline-block;
+	margin-right: 10px;
+	width:100%;
+	font-family: "Roboto Slab", serif;
+	font-size: 1.3rem;
+	display: flex;
+	flex: auto;
+}
+
+input {
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+    border-radius: 6px;
+    width: 100%;
+}
+
+textarea{
+	height: 25vh;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+    border-radius: 6px;
+    width: 100%;
+}
+
+
+input[type=checkbox]{
+	display:inline;
+	width:inherit;
+}
+
+input[type=submit] {
+	background-color: #2e2e2e;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	font-family: "Roboto Slab", serif;
+    font-size: 1.3rem;
+}
+
+input[type=submit]:hover {
+	opacity: 0.7;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (min-width: 800px) {
+	form{
+	  padding: 10%;
+	}
+
+	input{
+	  width: 100%;
+	}
+
+	textarea{
+	  width: 100%;
+	  height: 20vh;
+   }
+
+   div + label{
+	  line-height: 25vh;
+	  vertical-align:top;
+   }
 }
